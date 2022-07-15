@@ -1,0 +1,24 @@
+<svg attr.width="{{ arch.width }}" attr.height="{{ arch.width }}" class="progress-arch">
+  <defs>
+    <linearGradient id="completion-gradient">
+      <stop class="progress-arch-color-start" offset="0%" />
+      <stop class="progress-arch-color-end" offset="100%" />
+    </linearGradient>
+  </defs>
+  <path
+    class="progress-arch-base-path"
+    attr.d="M {{ arch.archInitX }} {{ arch.archInitY }}
+            A {{ arch.radius }} {{ arch.radius }} 0 1 1 {{ arch.archEndX }} {{ arch.archEndY }}"
+  ></path>
+  <path
+    class="progress-arch-completion-path"
+    attr.stroke-width="{{ arch.strokeWidth }}"
+    attr.d="M {{ arch.archInitX }} {{ arch.archInitY }}
+            A {{ arch.radius }} {{ arch.radius }} 0 1 1 {{ arch.archEndX }} {{ arch.archEndY }}"
+    attr.stroke-dasharray="{{ arch.arch100Percent }}"
+    attr.stroke-dashoffset="{{ arch.archCurrentPercent }}"
+  ></path>
+  <text class="progress-arch-completion-text" dominant-baseline="middle" x="50%" y="50%">
+    {{ isDataLoaded() ? calcPercent() : noData }}%
+  </text>
+</svg>

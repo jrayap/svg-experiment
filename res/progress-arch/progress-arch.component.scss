@@ -1,0 +1,32 @@
+.progress-arch {
+  &-base-path {
+    fill: transparent;
+    stroke: grey;
+    stroke-linecap: round;
+    stroke-width: 1;
+  }
+
+  &-completion-path {
+    fill: transparent;
+    stroke: url(#completion-gradient);
+    stroke-linecap: round;
+  }
+
+  &-completion-text {
+    text-anchor: middle;
+    stroke: grey;
+    fill: grey;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+    font-size: xx-large;
+    // dominant-baseline seems to be an SVG exclusive attribute
+  }
+
+  &-color-start {
+    stop-color: #01beaa;
+  }
+
+  &-color-end {
+    stop-color: #21e098;
+  }
+}
